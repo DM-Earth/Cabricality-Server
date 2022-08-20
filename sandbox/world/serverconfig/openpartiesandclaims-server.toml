@@ -1,0 +1,86 @@
+
+[serverConfig]
+	#How often to auto-save modified data, e.g. parties, claims, player configs (in minutes)
+	#Range: > 1
+	autosaveInterval = 10
+	#A list of options in the player config that individual players can reconfigure. If an option is in neither of the configurable option lists, then the value in the default player config is used across the server. Check the default player config .toml file for the option names.
+	playerConfigurablePlayerConfigOptions = ["playerConfig.claims.protectClaimedChunks", "playerConfig.claims.protection.fromParty", "playerConfig.claims.protection.fromAllyParties", "playerConfig.claims.forceload.enabled", "playerConfig.claims.name", "playerConfig.claims.color", "playerConfig.parties.name", "playerConfig.parties.shareLocationWithParty", "playerConfig.parties.shareLocationWithMutualAllyParties", "playerConfig.parties.receiveLocationsFromParty", "playerConfig.parties.receiveLocationsFromMutualAllyParties"]
+	#A list of additional options in the player config that OPs can reconfigure for players. This is meant for options that should be configured per player but not by the players. If an option is in neither of the configurable option lists, then the value in the default player config is used across the server. Check the default player config .toml file for the option names.
+	opConfigurablePlayerConfigOptions = ["playerConfig.claims.bonusChunkClaims", "playerConfig.claims.bonusChunkForceloads"]
+
+	[serverConfig.parties]
+		#Whether the parties part of this mod is enabled.
+		enabled = true
+		#The maximum number of members in a party. Existing members are not removed if the limit is reduced.
+		#Range: > 1
+		maxPartyMembers = 64
+		#The maximum number of allies for a party. Existing allies are not removed if the limit is reduced.
+		#Range: > 0
+		maxPartyAllies = 64
+		#The maximum number of invites to a party. Existing invites are not removed if the limit is reduced.
+		#Range: > 1
+		maxPartyInvites = 16
+		#For how long a party (members) can stay completely inactive on the server until it is deleted (in hours). This improves performance for servers running for years.
+		#Range: > 1
+		partyExpirationTime = 168
+		#How often to check for expired parties in order to remove them (in minutes). The interval is effectively rounded up to a multiple of 10 minutes.
+		#Range: > 10
+		partyExpirationCheckInterval = 360
+
+	[serverConfig.claims]
+		#Whether the claims part of this mod is enabled.
+		enabled = true
+		#For how long a player can stay completely inactive on the server until their claims are expired (in hours). This improves performance for servers running for years.
+		#Range: > 1
+		playerClaimsExpirationTime = 8760
+		#How often to check for expired player chunk claims in order to remove them (in minutes). The interval is effectively rounded up to a multiple of 10 minutes.
+		#Range: > 10
+		playerClaimsExpirationCheckInterval = 360
+		#Whether to convert expired player chunk claims to "expired claims" instead of completely freeing them. This shouldn't be too bad for performance because it still reduces the number of unique claims.
+		playerClaimsConvertExpiredClaims = true
+		#The maximum number of chunks that a player can claim. Additional claims can be configured in the player config.
+		#This value can be overridden with a FTB Ranks permission.
+		#Range: > 0
+		maxPlayerClaims = 500
+		#The maximum number of claimed chunks that a player can forceload. Additional forceloads can be configured in the player config.
+		#This value can be overridden with a FTB Ranks permission.
+		#Range: > 0
+		maxPlayerClaimForceloads = 10
+		#The FTB Ranks permission that should override the default "maxPlayerClaims" value. Set it to an empty string to never check permissions.
+		maxPlayerClaimsFTBPermission = "xaero.pac_max_claims"
+		#The FTB Ranks permission that should override the default "maxPlayerClaimForceloads" value. Set it to an empty string to never check permissions. The permission override only takes effect after the player logs in at least once after a server (re)launch, so it is recommended to keep all permission-based forceload limits equal to or greater than "maxPlayerClaimForceloads".
+		maxPlayerClaimForceloadsFTBPermission = "xaero.pac_max_forceloads"
+		#The maximum distance on the X or Z axis (forming a square) that a chunk can be claimed at by a player.
+		#Range: > 0
+		maxClaimDistance = 5
+		#The type of the list defined in "claimableDimensionsList". ONLY - include only the listed dimensions. ALL_BUT - include all but the listed dimensions.
+		#Allowed Values: ONLY, ALL_BUT
+		claimableDimensionsListType = "ALL_BUT"
+		#Dimensions to include/exclude from being claimable, depending on the list type. For example ["minecraft:overworld", "minecraft:the_nether"]. By default the list is empty and of type ALL_BUT, meaning that all dimensions are claimable.
+		claimableDimensionsList = []
+		#Whether to allow existing player claims to stay active in unclaimable dimensions which were previously claimable.
+		allowExistingClaimsInUnclaimableDimensions = true
+		#Whether to allow existing player forceloads to stay active in unclaimable dimensions which were previously claimable. Only relevant if existing claims are allowed.
+		allowExistingForceloadsInUnclaimableDimensions = false
+		#Whether to synchronize world chunk claims to the game clients. Enables client-side mods to access the claims data, e.g. to display it on a map. ALL - all claims are synced. OWNED_ONLY - only the claims that the client player owns and server claims are synced. NOT_SYNCED - claims are not synced.
+		#Allowed Values: NOT_SYNCED, OWNED_ONLY, ALL
+		claimsSynchronization = "ALL"
+
+		[serverConfig.claims.protection]
+			#The type of the list defined in "friendlyChunkProtectedEntityList". ONLY - include only the listed entities. ALL_BUT - include all but the listed entities.
+			#Allowed Values: ONLY, ALL_BUT
+			friendlyChunkProtectedEntityListType = "ALL_BUT"
+			#Friendly entities to include/exclude in chunk protection, depending on the list type. For example ["minecraft:cow", "minecraft:rabbit"]. By default the list is empty with the type set to ALL_BUT, which means that all friendly entities are included.
+			friendlyChunkProtectedEntityList = ["minecraft:boat"]
+			#The type of the list defined in "hostileChunkProtectedEntityList". ONLY - include only the listed entities. ALL_BUT - include all but the listed entities.
+			#Allowed Values: ONLY, ALL_BUT
+			hostileChunkProtectedEntityListType = "ONLY"
+			#Hostile entities to include/exclude in chunk protection, depending on the list type. For example ["minecraft:creeper", "minecraft:zombie"]
+			hostileChunkProtectedEntityList = []
+			#Blocks to exclude from chunk protection. Just a block ID in the list, e.g. "minecraft:level" allows block interaction with an empty hand if a claim owner's config agrees. A block ID with a prefix "force$" allows empty hand interactions without asking the claim owner's config. Prefix "break$" allows breaking the block, if the claim owner's config agrees. Prefix "force_break$" allows breaking across the server. Add the same block multiple times to use multiple prefixes. For example ["minecraft:lever", "force$minecraft:stone_button", "force_break$minecraft:stone_button"]
+			blockProtectionExceptionList = ["minecraft:lever", "minecraft:stone_button", "minecraft:polished_blackstone_button", "minecraft:oak_button", "minecraft:spruce_button", "minecraft:birch_button", "minecraft:jungle_button", "minecraft:acacia_button", "minecraft:dark_oak_button", "minecraft:crimson_button", "minecraft:warped_button"]
+			#Entities to exclude from chunk protection. Just an entity ID in the list, e.g. "minecraft:horse" allows entity interaction with an empty hand if a claim owner's config agrees. An entity ID with a prefix "force$" allows empty hand interactions without asking the claim owner's config. Prefix "break$" allows killing the entity, if the claim owner's config agrees. Prefix "force_break$" allows killing the entity across the server. Add the same entity multiple times to use multiple prefixes. For example ["minecraft:villager", "break$minecraft:villager"]
+			entityProtectionExceptionList = ["minecraft:villager", "force$minecraft:minecart"]
+			#By default, use of some items is allowed in protected chunks, e.g. bows, shield, tridents, splash potions, to let the players protect themselves. To remove such exceptions for specific items, add them to this list. For example ["minecraft:trident", "minecraft:shield"]
+			additionalBannedItemsList = []
+

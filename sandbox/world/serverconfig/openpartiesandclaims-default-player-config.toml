@@ -1,0 +1,77 @@
+
+[playerConfig]
+
+	[playerConfig.parties]
+		#When not empty, used in some places as the name for the parties that you create.
+		name = ""
+		#When enabled, your location in the game is shared with players from the same party as you, which can be used by other mods, e.g. to display party members on a map.
+		shareLocationWithParty = true
+		#When enabled, your location in the game is shared with the mutual ally parties of the party that you are in, which can be used by other mods, e.g. to display party members on a map.
+		shareLocationWithMutualAllyParties = false
+		#When enabled, the sharable locations of players from the same party as you are shared with your game client, which can be used by other mods, e.g. to display party members on a map.
+		receiveLocationsFromParty = true
+		#When enabled, the sharable locations of players from the mutual ally parties of the party that you are in are shared with your game client, which can be used by other mods, e.g. to display allies on a map.
+		receiveLocationsFromMutualAllyParties = false
+
+	[playerConfig.claims]
+		#When not empty, used as the name for your claimed chunks.
+		name = ""
+		#The number of additional chunk claims that you can make on top of the normal limit.
+		bonusChunkClaims = 0
+		#Used as the color for your claims. Set to 0 to use the default automatic color.
+		color = 0
+		#The number of additional chunk claim forceloads that you can make on top of the normal limit.
+		bonusChunkForceloads = 0
+		#When enabled, the mod tries to protect your claimed chunks from other players. Workarounds are possible, especially with mods.
+		protectClaimedChunks = true
+
+		[playerConfig.claims.protection]
+			#When enabled, claimed chunk protection includes protection against players from the same party as you.
+			fromParty = true
+			#When enabled, claimed chunk protection includes protection against players from parties who are allied by the party that you are in.
+			fromAllyParties = true
+			#When enabled, claimed chunk protection includes block protection against explosions. Keep in mind that creeper explosions are also affected by the mob griefing option.
+			blocksFromExplosions = true
+			#When enabled, claimed chunk protection includes protection against mob griefing (e.g. endermen). Chunks directly next to the protected chunks are also partially protected. Should work for vanilla mob behavior, unless another mod breaks it. Modded mob behavior is unlikely to be included. Feel free to set the vanilla game rule for mob griefing to be safe. Keep in mind that creeper explosions are also affected by the explosion-related options. 
+			fromMobGriefing = true
+			#When enabled, claimed chunk protection includes protection against fire spread.
+			fromFireSpread = true
+			#When enabled, claimed chunk protection includes friendly (+ server configured) entities in the chunks being protected against players who don't have access to the chunks.
+			entitiesFromPlayers = true
+			#When enabled, claimed chunk protection includes friendly (+ server configured) entities in the chunks being protected against mobs.
+			entitiesFromMobs = true
+			#When enabled, claimed chunk protection includes friendly (+ server configured) entities in the chunks being protected against non-player entities without a living owner (e.g. dispenser-fired arrows, falling anvils, redstone-activated TNT).
+			entitiesFromAnonymousAttacks = true
+			#When enabled, claimed chunk protection includes friendly (+ server configured) entities in the chunks being protected against all explosions not directly activated by the chunk owner.
+			entitiesFromExplosions = true
+			#When enabled, claimed chunk protection includes chorus fruit teleportation prevention for players who don't have access to the chunks.
+			chorusFruitTeleport = true
+			#When enabled, claimed chunk protection includes blocks and entities being protected against lightning directly caused by players who don't have access to the chunks (e.g. with the trident). Chunks directly next to the protected chunks are also partially protected.
+			playerLightning = true
+			#When enabled, claimed chunk protection includes protection against crop trample (falling on crops destroys them) for players that don't have access to the chunks.
+			cropTrample = true
+			#When enabled, claimed chunk protection includes protection against fluids (e.g. lava) flowing into the protected chunks from outside. This does not protect wilderness.
+			fluidBarrier = true
+			#When enabled, claimed chunk protection includes protection against dispensers "touching" and facing the protected chunks from outside. This does not protect wilderness.
+			dispenserBarrier = true
+			#When enabled, claimed chunk protection includes protection against being affected by pistons outside of the protected chunks. This does not protect wilderness.
+			pistonBarrier = true
+			#When enabled, claimed chunk protection includes protection from "item use" for chunks directly next to the claimed ones. Item use in this context usually means things that still work while looking at the sky (not block or entity) or items that use custom ray-tracing for blocks/fluids/entities (e.g. things you can place on water). Item use protection exceptions (e.g. food, potions etc) still apply.
+			neighborChunksItemUse = true
+			#When enabled, in addition to some forced exceptions across the server, more block interactions with an empty hand are allowed, which are also configured by the server. It is meant for things like levers, doors etc. You can use the non-ally mode to test it out.
+			allowSomeBlockInteractions = false
+			#When enabled, in addition to some forced exceptions across the server, more blocks are allowed to be broken, which are also configured by the server. You can use the non-ally mode to test it out.
+			allowSomeBlockBreaking = false
+			#When enabled, in addition to some forced exceptions across the server, more entity interactions with an empty hand are allowed, which are also configured by the server. It is meant for things like villager trading, minecarts, boats etc. You can use the non-ally mode to test it out.
+			allowSomeEntityInteractions = false
+			#When enabled, in addition to some forced exceptions across the server, more entities are allowed to be attacked and killed, which are also configured by the server. You can use the non-ally mode to test it out.
+			allowSomeEntityKilling = false
+
+		[playerConfig.claims.forceload]
+			#When enabled, the chunks you have marked for forceloading are forceloaded.
+			#If the forceload limit has changed and you have more chunks marked than the new limit, then some of the chunks won't be forceloaded. Unmark any chunks until you are within the limit to ensure that all marked chunks are forceloaded.
+			enabled = true
+			#When enabled, the chunks you have marked for forceloading stay loaded even when you are offline (can significantly affect server performance!).
+			#If your forceload limit is affected by your FTB Ranks rank/permissions, then you need to login at least once after a server (re)launch for it to take effect while you are offline.
+			offlineForceload = false
+

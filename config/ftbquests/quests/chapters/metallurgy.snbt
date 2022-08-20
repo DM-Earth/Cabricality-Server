@@ -1,0 +1,273 @@
+{
+	id: "1B927DD15CF28E13"
+	group: "331B6409EF6A7840"
+	order_index: 7
+	filename: "metallurgy"
+	title: "▶ 科学冶金"
+	icon: "indrev:silver_ingot"
+	default_quest_shape: ""
+	default_hide_dependency_lines: false
+	quests: [
+		{
+			title: "Build-a-Processing:"
+			icon: "create:deepslate_zinc_ore"
+			x: -9.0d
+			y: -4.0d
+			shape: "circle"
+			description: [
+				"A simple Overview of most options to process your way from Ore to Ingot."
+				""
+				"For every path through this graph, the effective yield per ore can be estimated by multiplying the ratio of each included step."
+			]
+			id: "6B03056FA21424C0"
+			tasks: [{
+				id: "4220B0B7F6BF4327"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Mining Tool"
+			icon: {
+				id: "minecraft:iron_pickaxe"
+				Count: 1b
+				tag: {
+					Damage: 0
+				}
+			}
+			x: -7.0d
+			y: -3.0d
+			subtitle: "1 to 1"
+			dependencies: ["6B03056FA21424C0"]
+			id: "7967324CAC77AF60"
+			tasks: [{
+				id: "4B6F024B97BC278F"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "I: Crushed"
+			icon: "create:crushed_zinc_ore"
+			x: -9.0d
+			y: -2.0d
+			shape: "circle"
+			dependencies: [
+				"7967324CAC77AF60"
+				"005F2C4E203E7E62"
+			]
+			dependency_requirement: "one_completed"
+			id: "612100C7C6E0A7C9"
+			tasks: [{
+				id: "720C60FFE33E9E3B"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Fortune"
+			icon: {
+				id: "minecraft:golden_pickaxe"
+				Count: 1b
+				tag: {
+					Damage: 0
+					Enchantments: [{
+						lvl: 3s
+						id: "minecraft:fortune"
+					}]
+				}
+			}
+			x: -11.0d
+			y: -3.0d
+			subtitle: "1 to 1-2"
+			dependencies: ["6B03056FA21424C0"]
+			id: "005F2C4E203E7E62"
+			tasks: [{
+				id: "5EC097C40FE0A5DB"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Pulverizing"
+			icon: "indrev:pulverizer_mk1"
+			x: -11.0d
+			y: -1.0d
+			subtitle: "1 to 6"
+			dependencies: ["612100C7C6E0A7C9"]
+			id: "623EE1E0678E4F2A"
+			tasks: [{
+				id: "32C926B2269E8EA9"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "II: Dust"
+			icon: "createplus:zinc_dust"
+			x: -9.0d
+			y: 0.0d
+			shape: "circle"
+			dependencies: [
+				"3A81BC460AF1756D"
+				"623EE1E0678E4F2A"
+				"352F5F851045653A"
+			]
+			dependency_requirement: "one_completed"
+			id: "07BE7128982202A7"
+			tasks: [{
+				id: "24827B93E6C39D1C"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "IIIb: Liquid"
+			icon: "tconstruct:molten_zinc_bucket"
+			x: -8.5d
+			y: 2.0d
+			shape: "circle"
+			subtitle: "[in Nuggets]"
+			dependencies: ["1A5A81CA749DAB2A"]
+			dependency_requirement: "one_completed"
+			id: "6509024553997AB0"
+			tasks: [{
+				id: "63C79158B9BD32FF"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "IIIa: Nugget"
+			icon: "create:zinc_nugget"
+			x: -9.5d
+			y: 2.0d
+			shape: "circle"
+			dependencies: [
+				"21E76761CD3761C2"
+				"2C2E304910D7F33D"
+				"171A0F26C6608E83"
+			]
+			dependency_requirement: "one_completed"
+			id: "29DABB5FDE6356E9"
+			tasks: [{
+				id: "076ACC98C6F22EF6"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Smelting"
+			icon: "minecraft:furnace"
+			x: -13.0d
+			y: -1.0d
+			subtitle: "1 to 3"
+			dependencies: ["612100C7C6E0A7C9"]
+			id: "21E76761CD3761C2"
+			tasks: [{
+				id: "2B5E747AF5ADDD50"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Crushing"
+			icon: "create:crushing_wheel"
+			x: -5.0d
+			y: -1.0d
+			subtitle: "1 to 3-6"
+			dependencies: ["612100C7C6E0A7C9"]
+			id: "352F5F851045653A"
+			tasks: [{
+				id: "6F089C1EAF85CBC6"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Milling"
+			icon: "create:millstone"
+			x: -7.0d
+			y: -1.0d
+			subtitle: "1 to 3"
+			dependencies: ["612100C7C6E0A7C9"]
+			id: "3A81BC460AF1756D"
+			tasks: [{
+				id: "13538972B20A96BA"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Melting"
+			icon: "alloy_forgery:deepslate_bricks_forge_controller"
+			x: -7.0d
+			y: 1.0d
+			subtitle: "1 to 3"
+			dependencies: ["07BE7128982202A7"]
+			id: "715BBD0DF0136FF1"
+			tasks: [{
+				id: "3B4F0668876D88E3"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "IV: Ingot"
+			icon: "create:zinc_ingot"
+			x: -9.0d
+			y: 4.0d
+			shape: "circle"
+			dependencies: [
+				"1A5A81CA749DAB2A"
+				"2D33D7864925BFF9"
+				"715BBD0DF0136FF1"
+			]
+			dependency_requirement: "one_completed"
+			id: "2BE033F631A778D9"
+			tasks: [{
+				id: "206B68B6B69CC7AD"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Block Cooling \\& Smelting"
+			icon: "kubejs:extractor_machine"
+			x: -6.0d
+			y: 0.0d
+			subtitle: "9 to 1"
+			dependencies: ["6B03056FA21424C0"]
+			id: "1A5A81CA749DAB2A"
+			tasks: [{
+				id: "7B5CAD7F1C63A9EC"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Smelting Dust"
+			icon: "minecraft:furnace"
+			x: -12.0d
+			y: 1.0d
+			subtitle: "1 to 1"
+			dependencies: ["07BE7128982202A7"]
+			id: "171A0F26C6608E83"
+			tasks: [{
+				id: "559EC3ED3EF7A701"
+				type: "checkmark"
+			}]
+		}
+		{
+			title: "Washing"
+			icon: "create:encased_fan"
+			x: -5.0d
+			y: 1.0d
+			subtitle: "1 to 2"
+			dependencies: ["07BE7128982202A7"]
+			id: "2C2E304910D7F33D"
+			tasks: [{
+				id: "1798B173604752C1"
+				type: "checkmark"
+			}]
+		}
+		{
+			icon: "create:mechanical_press"
+			x: -11.0d
+			y: 3.0d
+			dependencies: ["29DABB5FDE6356E9"]
+			id: "2D33D7864925BFF9"
+			tasks: [{
+				id: "63F651277B0CDC57"
+				type: "checkmark"
+				title: "Compacting by Press"
+			}]
+		}
+	]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "create:mixing",
+  "ingredients": [
+    {
+      "item": "kubejs:gold_coin"
+    }
+  ],
+  "results": [
+    {
+      "fluid": "tconstruct:molten_gold",
+      "amount": 1296
+    }
+  ],
+  "heatRequirement":"heated"
+}
