@@ -3,22 +3,21 @@
 	group: "331B6409EF6A7840"
 	order_index: 4
 	filename: "stage_4"
-	title: "&f&l4&r 靶向药物"
+	title: "&f4&r Into the Box"
 	icon: "minecraft:purple_shulker_box"
 	default_quest_shape: ""
 	default_hide_dependency_lines: false
 	quests: [
 		{
-			title: "&6&l靶向药物"
+			title: "Chapter 4 Start!"
 			icon: "kubejs:inductive_mechanism"
 			x: 1.0d
 			y: -2.5d
 			shape: "hexagon"
-			subtitle: "&6第四章"
 			description: [
-				"下一步就是生产&6硅板&r了。已知道路中的一种就是将无数的物品、流体和能量不断地与紧凑的&6殷钢机器&r相结合。"
+				"The next target will be Printed Silicon. As one of two known ways to obtain it, the assembly line will move items, fluids and energy in and out of the new and rather compact Invar Machinery."
 				""
-				"就像前几个章节一样，你需要先进行充足的材料准备。"
+				"Much like previous chapters, a few new material sources or shipments are required first."
 			]
 			dependencies: ["74CFD83C501C4952"]
 			hide: true
@@ -27,7 +26,6 @@
 			tasks: [{
 				id: "0C162B64EE377FC8"
 				type: "checkmark"
-				title: "&6开始！"
 			}]
 			rewards: [{
 				id: "01697377D270DD3C"
@@ -36,33 +34,31 @@
 			}]
 		}
 		{
-			title: "投产！"
+			title: "New Capacity"
 			icon: "indrev:heat_generator_mk4"
 			x: -1.0d
 			y: -2.5d
 			shape: "circle"
-			description: ["接下来的生产线会消耗很多通量能量，确保你找到了合适的发电方式并能够随时增加发电规模，以便后续使用。"]
+			description: ["The upcoming Assembly Line will require a significant amount of flux energy to run. It is recommended to find a suitable generation method and to consider higher scales in planning should it become necessary later."]
 			dependencies: ["4B80A801A5BE4A01"]
 			id: "13B197C90F9812C8"
 			tasks: [{
 				id: "4C687EF00A44ED1E"
 				type: "checkmark"
-				title: "知道了"
 			}]
 		}
 		{
-			title: "光之巨人"
+			title: "The Alchemical Laser BOOM"
 			icon: "indrev:laser_emitter_mk4"
 			x: 3.0d
 			y: -2.5d
 			shape: "circle"
-			description: ["&6炼金激光&r在这一科技阶梯中扮演着举足轻重的角色。"]
+			description: ["A central role in this age of technology is played by the Alchemical Laser."]
 			dependencies: ["4B80A801A5BE4A01"]
 			id: "6D26DAB7D0FF6E90"
 			tasks: [{
 				id: "16897A4EF323B02E"
 				type: "checkmark"
-				title: "知道了"
 			}]
 			rewards: [{
 				id: "24B631E93DB0C8F7"
@@ -72,12 +68,12 @@
 			}]
 		}
 		{
-			title: "寄点沙子过来"
+			title: "Sand Delivery"
 			icon: "minecraft:sand"
 			x: -1.0d
 			y: -0.5d
-			subtitle: "步骤 31-1"
-			description: ["是时候提高你的沙子产量了，因为它们富含&6硅！&r"]
+			subtitle: "Contraption 31-1"
+			description: ["A new Shipment of Sand should be scheduled, for it is significantly rich in silicon."]
 			hide_dependency_lines: true
 			dependencies: ["4B80A801A5BE4A01"]
 			id: "22202C87352242D6"
@@ -91,18 +87,20 @@
 				{
 					id: "58353DEAB0670141"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "团团转"
+			title: "Ball o' Sand"
 			icon: "kubejs:sand_ball"
 			x: -1.0d
 			y: 0.5d
-			subtitle: "步骤 31-2"
+			subtitle: "Contraption 31-2"
 			description: [
-				"新产出的沙子将会被送去清洗并揉成一团。"
+				"First, the raw blocks are washed and refined into small orbs of wet sand."
+				""
+				"Since they could easily collapse, they should never be stacked on top of another. The inductive Fluid Encapsulator should have the necessary precision to generate these reliably."
 			]
 			dependencies: ["22202C87352242D6"]
 			id: "42F1A649D86DB86D"
@@ -116,32 +114,31 @@
 				{
 					id: "36183F0BBDAA8DB8"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "搅和搅和"
+			title: "Liquid Sand"
 			icon: "kubejs:fine_sand_bucket"
 			x: 1.0d
 			y: 1.5d
 			shape: "circle"
-			description: ["在将&6沙球&r筛成&6粗沙&r的过程中不可避免地产生了副产品。不过先别急着扔掉，我们以后还会用到这些流体..."]
+			description: ["Sifting for Coarse Sand creates a byproduct relevant for further refining the silicon compound."]
 			dependencies: ["42F1A649D86DB86D"]
 			id: "4412F3B2827606E4"
 			tasks: [{
 				id: "5C23F9DBF4F2F484"
 				type: "checkmark"
-				title: "知道了"
 			}]
 		}
 		{
-			title: "仍需打磨"
+			title: "Coarse Sand"
 			icon: "kubejs:rough_sand"
 			x: -1.0d
 			y: 1.5d
-			subtitle: "步骤 31-3"
-			description: ["将&6沙球&r扔到&6分液池&r中，分离出其中的砂质物。"]
+			subtitle: "Contraption 31-3"
+			description: ["Rolling the sand ball over an item drain reveals the larger chunks contained within."]
 			dependencies: ["42F1A649D86DB86D"]
 			id: "0F5AA5DF001DCDF5"
 			tasks: [
@@ -154,17 +151,17 @@
 				{
 					id: "589AB5A61CD95E2F"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "赛博石矿"
+			title: "Modern Cobblegen"
 			icon: "minecraft:basalt"
 			x: -3.0d
 			y: -1.0d
-			subtitle: "步骤 32-1"
-			description: ["从&6玄武岩&r中分离出微量的惰性&6玄武粉末&r是一种低成本的方案。但前提是，你要有用不完的&6玄武岩&r才行。"]
+			subtitle: "Contraption 32-1"
+			description: ["Basalt is an accessible type of rock that contains traces of inert Basalz Powder. For the purposes of this, a steady supply of them is needed."]
 			hide_dependency_lines: true
 			dependencies: ["4B80A801A5BE4A01"]
 			id: "0B602ED47A0195A4"
@@ -178,20 +175,19 @@
 				{
 					id: "738E569981496B56"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "炽热激光"
+			title: "Hot Laser"
 			icon: "kubejs:basalz_shard"
 			x: -3.0d
 			y: 0.5d
-			subtitle: "步骤 32-2"
+			subtitle: "Contraption 32-2"
 			description: [
-				"第一台&6激光发射器&r能够将&6玄武碎片&r从&6玄武岩&r中提取出来，等待进一步的处理。"
+				"The first Alchemical Laser forms activated basalz essence from Basalt. This works only if powered water is above the Fluid Hopper."
 				""
-				"你需要在&6激光发射器&r上方放置一个&6吸液漏斗，&r再在最上方放置一格&6充能水。&r向&6激光发射器&r通入红石信号就可使其工作。"
 			]
 			dependencies: ["0B602ED47A0195A4"]
 			id: "6C4CB8F616A9C3DF"
@@ -205,17 +201,17 @@
 				{
 					id: "7DF47F688E5C795C"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "玄武试炼"
+			title: "Basalz Mill"
 			icon: "kubejs:basalz_powder"
 			x: -3.0d
 			y: 2.0d
-			subtitle: "步骤 33-1"
-			description: ["在投入使用前，你需要将&6玄武碎片&r进一步提纯。"]
+			subtitle: "Contraption 33-1"
+			description: ["Before it is ready for processing, the basalz essence needs a bit of refinement. "]
 			dependencies: ["6C4CB8F616A9C3DF"]
 			id: "5799B4124EE20DB1"
 			tasks: [
@@ -228,17 +224,17 @@
 				{
 					id: "05969082F437FCA9"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "浓缩热量"
+			title: "Concentrated Heat"
 			icon: "kubejs:earth_charge"
 			x: -3.0d
 			y: 3.0d
-			subtitle: "步骤 33-2"
-			description: ["将一些处理好的&6玄武粉末&r压制成密度更高的&6岩荷弹&r吧。"]
+			subtitle: "Contraption 33-2"
+			description: ["Compact enough powder back together to create the highly reactive Earth Charge."]
 			dependencies: ["5799B4124EE20DB1"]
 			id: "60A8B4C736CE3226"
 			tasks: [
@@ -251,17 +247,17 @@
 				{
 					id: "21545C0F55D9D8C8"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "无瑕之玉"
+			title: "Crystalline Sand"
 			icon: "kubejs:purified_sand"
 			x: -1.0d
 			y: 3.0d
-			subtitle: "步骤 33-3"
-			description: ["在高温下用&6岩荷弹&r富集&6粗砂&r就可以铸成&6高纯砂，&r这时，其中的硅含量已经足够我们制造硅板了。"]
+			subtitle: "Contraption 33-3"
+			description: ["Enriching coarse sand with earth charges creates Sand Crystals. Not much more processing is left until the Silicon content reaches a state usable for circuits."]
 			dependencies: [
 				"60A8B4C736CE3226"
 				"0F5AA5DF001DCDF5"
@@ -277,18 +273,18 @@
 				{
 					id: "2BE9DD7F346679E2"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "行将就木"
+			title: "Wood Delivery"
 			icon: "minecraft:oak_log"
 			x: 3.0d
 			y: -0.5d
 			shape: "square"
-			subtitle: "步骤 34-1"
-			description: ["在原地建造一个全新的树场是件值得考虑的事。它可以使你包括&6硅板&r在内的后续生产方便许多。"]
+			subtitle: "Contraption 34-1"
+			description: ["It'll be good to order a Wood supply to this location. Aside from Silicon it can contribute to this assembly line for some other useful products."]
 			hide_dependency_lines: true
 			dependencies: ["4B80A801A5BE4A01"]
 			id: "46820FBDDDEE491E"
@@ -310,17 +306,17 @@
 				{
 					id: "72BA1D3BD545CBE6"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "热解炉 I"
+			title: "Pyrolyzer Round I"
 			icon: "minecraft:charcoal"
 			x: 3.0d
 			y: 0.5d
-			subtitle: "步骤 34-2"
-			description: ["&6木炭&r的生产只需要进行简单的烧炼。"]
+			subtitle: "Contraption 34-2"
+			description: ["A Pyrolisation process is not strictly required for Charcoal, but the increased yield makes it worthwhile if the wood supply is limited."]
 			dependencies: ["46820FBDDDEE491E"]
 			id: "3249CD08992F2BCD"
 			tasks: [
@@ -333,17 +329,16 @@
 				{
 					id: "760709B05A0FEF11"
 					type: "checkmark"
-					title: "完成"
 				}
 			]
 		}
 		{
-			title: "热解炉 II"
+			title: "Pyrolyzer Round II"
 			icon: "kubejs:coal_coke"
 			x: 3.0d
 			y: 1.5d
-			subtitle: "步骤 34-3"
-			description: ["将&6木炭&r进行更加复杂的处理即可制造&6焦炭，&r它不仅是优秀的固体燃料，更是提纯&6硅&r的必要材料。"]
+			subtitle: "Contraption 34-3"
+			description: ["In a secondary, more lengthy pyrolisation process, Coal Coke is formed. An ideal material for both refining Silicon and to provide heat as Solid Fuel."]
 			dependencies: ["3249CD08992F2BCD"]
 			id: "1A383F96B312D1B8"
 			tasks: [
@@ -356,17 +351,17 @@
 				{
 					id: "4960B920CCF3C186"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "高压水枪"
+			title: "Controlled Cuts"
 			icon: "kubejs:coke_chunk"
 			x: 3.0d
 			y: 3.0d
-			subtitle: "步骤 35"
-			description: ["将&6动力锯&r和水结合，可以将&6焦炭&r切割为小块，以增加催化时的接触表面积。"]
+			subtitle: "Contraption 35"
+			description: ["Using Mechanical Saws and Water, the coke can to be cut up into chunks in order to become a more effective catalyst."]
 			dependencies: ["1A383F96B312D1B8"]
 			id: "16F920C2AF2FA2E0"
 			tasks: [
@@ -379,17 +374,17 @@
 				{
 					id: "44D36B403AA26E97"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "调酒师"
+			title: "The Merge"
 			icon: "kubejs:silicon_compound"
 			x: 1.0d
 			y: 4.0d
-			subtitle: "步骤 36"
-			description: ["将&6高纯砂、小块焦炭&r和&6细砂流体&r混合搅拌，就可以从其中提纯出&6硅&r了。"]
+			subtitle: "Contraption 36"
+			description: ["The process of refining silicon requires a blend of Sand Crystals, Fine Sand and the Carbon Catalyst."]
 			dependencies: [
 				"343050A40A3AB1F0"
 				"4412F3B2827606E4"
@@ -406,17 +401,17 @@
 				{
 					id: "2F239D4D9BB9B47A"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "堆雪人"
+			title: "Snow Machine"
 			icon: "minecraft:snow_block"
 			x: 5.0d
 			y: -1.0d
-			subtitle: "步骤 37"
-			description: ["&6殷钢机器&r使得从水中制造&6雪球&r不再是难事。也许我们应该为下一位不速之客预留些雪球订单..."]
+			subtitle: "Contraption 37"
+			description: ["New Invar Technology makes forming snowballs out of Water quite a simple process. Perhaps we should set aside a few for our next unannounced visitor.."]
 			hide_dependency_lines: true
 			dependencies: ["4B80A801A5BE4A01"]
 			id: "4B34B52092BA32BE"
@@ -430,20 +425,20 @@
 				{
 					id: "193D8F8FEC7F864B"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "冷酷激光"
+			title: "Cool Laser"
 			icon: "kubejs:blizz_cube"
 			x: 5.0d
 			y: 2.5d
-			subtitle: "步骤 38"
+			subtitle: "Contraption 38"
 			description: [
-				"第二台&6激光发射器&r可以从&6雪块&r中提取出&6暴雪结晶。&r"
+				"The second Alchemical Laser forms activated blizz essence from Snow Blocks."
 				""
-				"你完全可以使用与&6【步骤 32-2】&r中相同的机械结构。"
+				"Your automation strategy from Contraption 32 will perform just as effective here."
 			]
 			dependencies: ["4B34B52092BA32BE"]
 			id: "0AE7FAEBD5F86D9C"
@@ -457,17 +452,17 @@
 				{
 					id: "518D5675C9D1757D"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "暴雪试炼"
+			title: "Blizz Mill"
 			icon: "kubejs:blizz_powder"
 			x: 5.0d
 			y: 4.0d
-			subtitle: "步骤 39-1"
-			description: ["就像早些时候一样，你需要将&6暴雪结晶&r进一步提纯。"]
+			subtitle: "Contraption 39-1"
+			description: ["Just like earlier, the essence becomes usable only after a bit of refinement."]
 			dependencies: ["0AE7FAEBD5F86D9C"]
 			id: "01B0A6236A5073D1"
 			tasks: [
@@ -480,17 +475,17 @@
 				{
 					id: "5CA556BB4614DD06"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "浓缩严寒"
+			title: "Concentrated Cold"
 			icon: "kubejs:ice_charge"
 			x: 5.0d
 			y: 5.0d
-			subtitle: "步骤 39-2"
-			description: ["继续将&6暴雪粉末&r压制成为&6冰荷弹。&r"]
+			subtitle: "Contraption 39-2"
+			description: ["Compact enough powder back together to create the highly reactive Ice Charge."]
 			dependencies: ["01B0A6236A5073D1"]
 			id: "4732465116D723EE"
 			tasks: [
@@ -503,17 +498,17 @@
 				{
 					id: "220B89A9B897FA67"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "终极归纳"
+			title: "Final Induction"
 			icon: "ae2:silicon"
 			x: 3.0d
 			y: 5.0d
-			subtitle: "步骤 39-3"
-			description: ["在&6冶炼炉&r中将两者再次结合，就可以提纯出一小块高质量的&6硅&r了。"]
+			subtitle: "Contraption 39-3"
+			description: ["One final pass in the Induction Smelter now produces a chunk of high-quality Silicon."]
 			dependencies: [
 				"2268AFAF6E9AB5E2"
 				"4732465116D723EE"
@@ -529,18 +524,18 @@
 				{
 					id: "57D267DD10A22D32"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "未解之谜"
+			title: "Secrets uncovered"
 			icon: "kubejs:substrate_silicon"
 			disable_toast: true
 			x: -3.0d
 			y: 5.0d
 			shape: "hexagon"
-			description: ["一条秘密路线被前人发掘，如果利用得当的话，快速获取大量&6智慧构件&r也许不是什么难事..."]
+			description: ["The Secret path has been discovered and pursued. From here, getting the Calculation Mechanism will be trivial."]
 			dependencies: ["3B431AAADE8845FA"]
 			hide: true
 			size: 1.5d
@@ -548,7 +543,7 @@
 			tasks: [{
 				id: "5B4F2E2F7BDEA6A0"
 				type: "stat"
-				title: "&f&l完成混沌炼金"
+				title: "Complete Chapter 4a"
 				icon: "kubejs:substrate_chaos"
 				disable_toast: true
 				stat: "minecraft:play_time"
@@ -556,12 +551,12 @@
 			}]
 		}
 		{
-			title: "拆箱！"
+			title: "Unboxing"
 			icon: "ae2:silicon"
 			x: -1.0d
 			y: 5.0d
-			subtitle: "步骤 39-A"
-			description: ["使用工业革命的&6锯木机&r把&6硅&r从试剂瓶中提取出来吧。"]
+			subtitle: "Contraption 39-A"
+			description: ["Separate the Silicon from its jar using a Reagent Extractor."]
 			dependencies: ["0CE88FEA070DC46C"]
 			id: "4B19B6EAD511378D"
 			tasks: [
@@ -574,17 +569,17 @@
 				{
 					id: "0A4B691EF3CDC7A0"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "压模电路"
+			title: "Circuit Stamper"
 			icon: "ae2:printed_silicon"
 			x: 1.0d
 			y: 6.0d
-			subtitle: "步骤 40-1"
-			description: ["使用&6机械手&r将&6硅&r压模成&6硅板。&r你需要的&6硅压印模板&r可以在自然生成的陨石内部找到。"]
+			subtitle: "Contraption 40-1"
+			description: ["Use Deployers to create a circuit base out of silicon. The required Press can be located at the center of Sky Stone Meteors."]
 			dependencies: [
 				"067C5FDA4709F195"
 				"4B19B6EAD511378D"
@@ -601,17 +596,17 @@
 				{
 					id: "20B36555F58C4DB1"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "整装待发"
+			title: "Ready to Deploy"
 			icon: "kubejs:calculation_mechanism"
 			x: 1.0d
 			y: 7.5d
-			subtitle: "步骤 40-2"
-			description: ["你还需要最后三个&6机械手&r将构件升级..."]
+			subtitle: "Contraption 40-2"
+			description: ["For one last time, a line of Deployers will be needed to upgrade the previous mechanism to the next tier."]
 			dependencies: [
 				"1BF8F3CC8BEBB620"
 				"71D90A1E5D53FC0A"
@@ -627,18 +622,18 @@
 				{
 					id: "48B114D2C0F51F6D"
 					type: "checkmark"
-					title: "自动生产"
+					title: "Automated"
 				}
 			]
 		}
 		{
-			title: "全身武装"
+			title: "Arming the Deployer IV"
 			x: -0.5d
 			y: 7.5d
 			shape: "circle"
 			description: [
-				"你需要一些&6闪存&r以制造&6智能构件。&r"
-				"&7保管好贵重物品！"
+				"The installation process of Calculation Mechanisms can be facilitated by a Flash Drive."
+				"The precious Cobalt required can be found in the Nether. "
 			]
 			hide_dependency_lines: true
 			dependencies: ["71D90A1E5D53FC0A"]
@@ -657,12 +652,12 @@
 			}]
 		}
 		{
-			title: "&f&l第四章完成！&r"
+			title: "Chapter 4 Complete!"
 			x: 1.0d
 			y: 9.5d
 			shape: "hexagon"
 			description: [
-				"终于走到这一步了！你工厂中所有的传统流水线都已组装完成，让我们一起步入智能时代吧！"
+				"Great work! The final assembly line is now complete. Your factory just entered the Digital Age."
 				""
 				"New options have opened up in the Overview. Whenever you are ready."
 			]
@@ -697,11 +692,11 @@
 			]
 		}
 		{
-			title: "电路快递 I"
+			title: "Express Circuitry I"
 			x: 3.0d
 			y: 9.5d
-			subtitle: "步骤 41-1"
-			description: ["组装&6各式ME电路板&r还需要一些额外操作，也许你可以制造一条半自动化流水线。"]
+			subtitle: "Contraption 41-1"
+			description: ["Additional Processors are required in creating logistical components of ME Technology. At some point some Semi-Automation should come into consideration."]
 			dependencies: ["28DAED70768C6A50"]
 			id: "24C48CFAAD71B230"
 			tasks: [
@@ -726,11 +721,11 @@
 			]
 		}
 		{
-			title: "电路速递 II"
+			title: "Express Circuitry II"
 			x: 4.0d
 			y: 9.5d
-			subtitle: "步骤 41-2"
-			description: ["组装它们并不是轻而易举就能完成的事，但看着它们运行很有趣。"]
+			subtitle: "Contraption 41-2"
+			description: ["Assembling the Processors is not a trivial process. But it sure is fun to watch it work."]
 			dependencies: ["24C48CFAAD71B230"]
 			id: "2B8F1D804107EB8C"
 			tasks: [
