@@ -1,9 +1,9 @@
 onEvent("recipes", event => {
-	event.recipes.createCompacting(KJ("matter_plastics"), [AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball")]).superheated()
-	let gear = KJ("sturdy_mechanism")
-	let plastic = KJ("matter_plastics")
+	event.recipes.createCompacting(CABF("matter_plastics"), [AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball"), AE2("matter_ball")]).superheated()
+	let gear = CABF("sturdy_mechanism")
+	let plastic = CABF("matter_plastics")
 	let machine = AE2("controller")
-	let matrix = KJ("computation_matrix")
+	let matrix = CABF("computation_matrix")
 	event.remove({ output: IV("controller") })
 	event.recipes.createMechanicalCrafting(IV("controller"), [
 		"AAAAA",
@@ -22,7 +22,7 @@ onEvent("recipes", event => {
 		event.smithing(r, i1, i2)
 		event.recipes.createMechanicalCrafting(r, "AB", { A: i1, B: i2 })
 	}
-	smithAndMechCraft(AR("rocket_launch_pad"), IV("tin_plate"), plastic)
+	smithAndMechCraft(AR("launch_pad"), IV("tin_plate"), plastic)
 	smithAndMechCraft(AR("cryo_freezer"), IV("condenser_mk4"), plastic)
 	smithAndMechCraft(AR("oxygen_sensor"), MC("observer"), plastic)
 	smithAndMechCraft(AR("fuel_refinery"), IV("smelter_mk4"), plastic)
@@ -47,9 +47,7 @@ onEvent("recipes", event => {
 		})
 	})
 	event.remove({ type: AR("compressing") })
-	//event.remove({ type: AR("oxygen_conversion") })
 	event.remove({ type: AR("nasa_workbench") })
-	//event.remove({ output: AR("oxygen_loader") })
 	event.remove({ output: AR("oxygen_distributer") })
 	event.remove({ output: AR("energizer") })
 	event.remove({ output: AR("water_pump") })
@@ -90,11 +88,24 @@ onEvent("recipes", event => {
 		})
 	})
 	let ore_map = [
-		["ad_astra:raw_desh", "kubejs:crushed_desh_ore"],
-		["ad_astra:raw_ostrum", "kubejs:crushed_ostrum_ore"],
-		["ad_astra:raw_calorite", "kubejs:crushed_calorite_ore"]
+		["ad_astra:raw_desh", asIdentifier("crushed_desh_ore")],
+		["ad_astra:raw_ostrum", asIdentifier("crushed_ostrum_ore")],
+		["ad_astra:raw_calorite", asIdentifier("crushed_calorite_ore")]
 	]
 	ore_map.forEach(mapped => {
 		event.replaceOutput({ type: CR("crushing") }, mapped[0], mapped[1])
 	})
+
+	event.remove({ output: AR("steel_cable") })
+	event.remove({ output: AR("desh_cable") })
+	event.remove({ output: AR("ostrum_fluid_pipe") })
+	event.remove({ output: AR("desh_fluid_pipe") })
+	event.remove({ output: AR("wrench") })
+
+	event.shaped("8x ad_astra:desh_cable", [
+    "PMP"
+  ], {
+    P: CABF("invar_ingot"),
+    M: MC("redstone")
+  })
 })

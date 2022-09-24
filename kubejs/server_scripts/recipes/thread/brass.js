@@ -9,20 +9,9 @@ onEvent("recipes", event => {
   event.recipes.createMechanicalCrafting(Item.of(AE2("fluix_crystal_seed"), 2), ["A"], { A: AE2("#all_fluix") })
 
   event.remove({ id: CR("sequenced_assembly/precision_mechanism") })
-  event.shapeless(KJ("screwdriver"), [IV("screwdriver"), MC("iron_ingot"), MC("blue_dye")])
+  event.shapeless(CABF("screwdriver"), [IV("screwdriver"), MC("iron_ingot"), MC("blue_dye")])
 
-  /*	let transition = CR("incomplete_precision_mechanism")
-    event.recipes.createSequencedAssembly([
-      CR("precision_mechanism"),
-    ], KJ("kinetic_mechanism"), [
-      event.recipes.createDeploying(transition, [transition, CR("electron_tube")]),
-      event.recipes.createDeploying(transition, [transition, CR("electron_tube")]),
-      event.recipes.createDeploying(transition, [transition, "kubejs:screwdriver"])
-    ]).transitionalItem(transition)
-      .loops(1)
-      .id("kubejs:precision_mechanism")	*/
-
-  event.shaped(KJ("brass_machine"), [
+  event.shaped(CABF("brass_machine"), [
     "SSS",
     "SCS",
     "SSS"
@@ -33,15 +22,14 @@ onEvent("recipes", event => {
   let brass_machine = (id, amount, other_ingredient) => {
     event.remove({ output: id })
     if (other_ingredient) {
-      event.smithing(Item.of(id, amount), "kubejs:brass_machine", other_ingredient)
-      event.recipes.createMechanicalCrafting(Item.of(id, amount), "AB", { A: "kubejs:brass_machine", B: other_ingredient })
+      event.smithing(Item.of(id, amount), asIdentifier("brass_machine"), other_ingredient)
+      event.recipes.createMechanicalCrafting(Item.of(id, amount), "AB", { A: asIdentifier("brass_machine"), B: other_ingredient })
     }
     else
-      event.stonecutting(Item.of(id, amount), "kubejs:brass_machine")
+      event.stonecutting(Item.of(id, amount), asIdentifier("brass_machine"))
   }
   brass_machine("create:mechanical_crafter", 3, MC("crafting_table"))
   brass_machine("create:sequenced_gearshift", 2)
-  brass_machine("create:furnace_engine", 1)
   brass_machine("create:rotation_speed_controller", 1)
   brass_machine("create:mechanical_arm", 1)
   brass_machine("create:stockpile_switch", 2)

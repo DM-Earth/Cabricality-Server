@@ -3,11 +3,11 @@ onEvent("recipes", event => {
   event.remove({ type: IV("sawmill") })
   event.remove({ type: IV("compress") })
   event.remove({ type: AE2("inscriber") })
-  event.shaped(KJ("circuit_scrap", 2), [" A ", "ABA", " A "], { A: KJ("invar_ingot"), B: C("#circuit_press") })
-  event.stonecutting(AE2("silicon_press"), KJ("circuit_scrap"))
-  event.stonecutting(AE2("engineering_processor_press"), KJ("circuit_scrap"))
-  event.stonecutting(AE2("calculation_processor_press"), KJ("circuit_scrap"))
-  event.stonecutting(AE2("logic_processor_press"), KJ("circuit_scrap"))
+  event.shaped(CABF("circuit_scrap", 2), [" A ", "ABA", " A "], { A: CABF("invar_ingot"), B: C("#circuit_press") })
+  event.stonecutting(AE2("silicon_press"), CABF("circuit_scrap"))
+  event.stonecutting(AE2("engineering_processor_press"), CABF("circuit_scrap"))
+  event.stonecutting(AE2("calculation_processor_press"), CABF("circuit_scrap"))
+  event.stonecutting(AE2("logic_processor_press"), CABF("circuit_scrap"))
 
   event.remove({ id: FD("flint_knife") })
   event.remove({ id: FD("iron_knife") })
@@ -53,6 +53,11 @@ onEvent("recipes", event => {
   event.replaceInput("#c:compressed_steel", "indrev:steel_plate")
   event.replaceInput("#c:compressed_desh", "ad_astra:desh_plate")
 
+  event.replaceInput("#c:copper_nuggets", "create:copper_nugget")
+  event.replaceOutput({}, "#c:copper_nuggets", "create:copper_nugget")
+  event.replaceInput("#c:nuggets/copper", "create:copper_nugget")
+  event.replaceOutput({}, "#c:nuggets/copper", "create:copper_nugget")
+
   event.blasting(IV("steel_ingot"), MC("iron_ingot")).cookingTime(400)
 
   event.remove({ id: CR("splashing/gravel") })
@@ -67,12 +72,6 @@ onEvent("recipes", event => {
     Item.of(MC("dead_bush")).withChance(0.05)
   ], "minecraft:red_sand")
 
-  event.shaped("8x indrev:cable_mk1", [
-    "PMP"
-  ], {
-    P: KJ("invar_ingot"),
-    M: MC("redstone")
-  })
   event.shaped(IV("item_pipe_mk1", 8), [
     "PMP"
   ], {
@@ -263,7 +262,7 @@ onEvent("recipes", event => {
     "SSSSS"
   ], {
     W: MC("water_bucket"),
-    S: KJ("computation_matrix")
+    S: CABF("computation_matrix")
   })
   event.remove({ output: CX("copper_ladder") })
   event.replaceOutput({}, CR("copper_ladder"), CX("copper_ladder"))
@@ -282,19 +281,11 @@ onEvent("recipes", event => {
   })
 
   event.replaceInput({ id: CR("crafting/kinetics/brass_hand") }, "#c:plates/brass", CR("golden_sheet"))
-  event.recipes.createPressing(KJ("zinc_sheet"), CR("zinc_ingot"))
+  event.recipes.createPressing(CABF("zinc_sheet"), CR("zinc_ingot"))
   event.replaceInput(IV("steel_block"), AR("steel_block"))
   event.replaceInput(IV("steel_nugget"), AR("steel_nugget"))
   event.replaceInput(AR("steel_ingot"), IV("steel_ingot"))
   event.remove({output: IV("steel_block")})
   event.remove({output: IV("steel_nugget")})
   event.remove({output: AR("steel_ingot")})
-
-  wood_types.forEach(wood => {
-    if (wood.startsWith("tconstruct")) {
-      event.recipes.createCutting("2x " + wood + "_planks_slab", wood + "_planks").processingTime(150)
-    } else {
-      event.recipes.createCutting("2x " + wood + "_slab", wood + "_planks").processingTime(150)
-    }
-  })
 })
