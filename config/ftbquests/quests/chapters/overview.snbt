@@ -43,9 +43,7 @@
 			x: -12.5d
 			y: -1.5d
 			shape: "circle"
-			description: [
-				"{overview.cabricality.preparation.content}"
-			]
+			description: ["{overview.cabricality.preparation.content}"]
 			dependencies: ["75FB28B253B14876"]
 			id: "7D6BC99CCCB29924"
 			tasks: [
@@ -83,22 +81,7 @@
 					id: "1900BA945C62D0CC"
 					type: "item"
 					title: "{overview.cabricality.preparation.task.forgery.title}"
-					item: {
-						id: "itemfilters:or"
-						Count: 1b
-						tag: {
-							items: [
-								{
-									id: "tconstruct:smeltery_controller"
-									Count: 1b
-								}
-								{
-									id: "alloy_forgery:deepslate_bricks_forge_controller"
-									Count: 1b
-								}
-							]
-						}
-					}
+					item: "tconstruct:smeltery_controller"
 					consume_items: false
 				}
 				{
@@ -122,9 +105,7 @@
 			y: 0.0d
 			shape: "circle"
 			subtitle: "{overview.cabricality.chapter_1.start.subtitle}"
-			description: [
-				"{overview.cabricality.chapter_1.start.content}"
-			]
+			description: ["{overview.cabricality.chapter_1.start.content}"]
 			dependencies: ["75FB28B253B14876"]
 			id: "61147823CC87F711"
 			tasks: [{
@@ -140,9 +121,7 @@
 			y: 0.0d
 			shape: "square"
 			subtitle: "{overview.cabricality.chapter_1.end.subtitle}"
-			description: [
-				"{overview.cabricality.chapter_1.end.content}"
-			]
+			description: ["{overview.cabricality.chapter_1.end.content}"]
 			dependencies: [
 				"61147823CC87F711"
 				"675C395B2074C24C"
@@ -183,9 +162,7 @@
 			x: -8.0d
 			y: 2.5d
 			subtitle: "{overview.cabricality.bonus_1a.end.subtitle}"
-			description: [
-				"{overview.cabricality.bonus_1a.end.content}"
-			]
+			description: ["{overview.cabricality.bonus_1a.end.content}"]
 			dependencies: [
 				"7D872F933F45809B"
 				"6545C3F427B12106"
@@ -208,9 +185,7 @@
 			y: 0.0d
 			shape: "circle"
 			subtitle: "{overview.cabricality.chapter_2.start.subtitle}"
-			description: [
-				"{overview.cabricality.chapter_2.start.content}"
-			]
+			description: ["{overview.cabricality.chapter_2.start.content}"]
 			dependencies: ["0E98B4D2BBF55308"]
 			id: "1E263994D4883A08"
 			tasks: [{
@@ -225,9 +200,7 @@
 			x: -7.0d
 			y: 0.0d
 			subtitle: "{overview.cabricality.chapter_2.end.subtitle}"
-			description: [
-				"{overview.cabricality.chapter_2.end.content}"
-			]
+			description: ["{overview.cabricality.chapter_2.end.content}"]
 			dependencies: [
 				"1E263994D4883A08"
 				"19715EBCBBA1B4AD"
@@ -250,9 +223,7 @@
 			y: -1.5d
 			shape: "circle"
 			subtitle: "{overview.cabricality.bonus_2a.start.subtitle}"
-			description: [
-				"{overview.cabricality.bonus_2a.start.content}"
-			]
+			description: ["{overview.cabricality.bonus_2a.start.content}"]
 			dependencies: ["69275ECFC147E15B"]
 			id: "7888F9129E9FE517"
 			tasks: [{
@@ -267,9 +238,7 @@
 			x: -5.0d
 			y: -2.5d
 			subtitle: "{overview.cabricality.bonus_2a.end.subtitle}"
-			description: [
-				"{overview.cabricality.bonus_2a.end.content}"
-			]
+			description: ["{overview.cabricality.bonus_2a.end.content}"]
 			dependencies: [
 				"7888F9129E9FE517"
 				"3C50B4556375178E"
@@ -292,9 +261,7 @@
 			y: 0.0d
 			shape: "circle"
 			subtitle: "{overview.cabricality.chapter_3.start.subtitle}"
-			description: [
-				"{overview.cabricality.chapter_3.start.content}"
-			]
+			description: ["{overview.cabricality.chapter_3.start.content}"]
 			dependencies: ["69275ECFC147E15B"]
 			id: "780E8AE86250C73D"
 			tasks: [{
@@ -309,9 +276,7 @@
 			x: -4.0d
 			y: 0.0d
 			subtitle: "{overview.cabricality.chapter_3.end.subtitle}"
-			description: [
-				"{overview.cabricality.chapter_3.end.content}"
-			]
+			description: ["{overview.cabricality.chapter_3.end.content}"]
 			dependencies: [
 				"780E8AE86250C73D"
 				"6CBA3D97CAD5DB63"
@@ -334,9 +299,7 @@
 			y: 1.5d
 			shape: "circle"
 			subtitle: "{overview.cabricality.bonus_3a.start.subtitle}"
-			description: [
-				"{overview.cabricality.bonus_3a.start.content}"
-			]
+			description: ["{overview.cabricality.bonus_3a.start.content}"]
 			dependencies: ["400CDC316DCDFE88"]
 			id: "2BB2C7B95E3C89AE"
 			tasks: [{
@@ -374,9 +337,7 @@
 			y: 0.0d
 			shape: "circle"
 			subtitle: "{overview.cabricality.chapter_4.start.subtitle}"
-			description: [
-				"{overview.cabricality.chapter_4.start.content}"
-			]
+			description: ["{overview.cabricality.chapter_4.start.content}"]
 			dependencies: ["400CDC316DCDFE88"]
 			id: "26173D4777F439B1"
 			tasks: [{
@@ -387,14 +348,12 @@
 		}
 		{
 			title: "{overview.cabricality.chapter_4a.start.title}"
-			icon: "cabricality:substrate_chaos"
+			icon: "cabricality:catalyst_jar_x1331490811"
 			x: -2.5d
 			y: -1.25d
 			shape: "circle"
 			subtitle: "{overview.cabricality.chapter_4a.start.subtitle}"
-			description: [
-				"{overview.cabricality.chapter_4a.start.content}"
-			]
+			description: ["{overview.cabricality.chapter_4a.start.content}"]
 			dependencies: ["400CDC316DCDFE88"]
 			id: "3934AD57122B6FFE"
 			tasks: [{
@@ -409,9 +368,7 @@
 			x: -1.0d
 			y: 0.0d
 			subtitle: "{overview.cabricality.chapter_4.end.subtitle}"
-			description: [
-				"{overview.cabricality.chapter_4.end.content}"
-			]
+			description: ["{overview.cabricality.chapter_4.end.content}"]
 			min_required_dependencies: 3
 			dependencies: [
 				"6824055533465010"
@@ -438,9 +395,7 @@
 			y: 0.0d
 			shape: "circle"
 			subtitle: "{overview.cabricality.chapter_5.start.subtitle}"
-			description: [
-				"{overview.cabricality.chapter_5.start.content}"
-			]
+			description: ["{overview.cabricality.chapter_5.start.content}"]
 			dependencies: ["08716DBF9C882623"]
 			id: "5E62059675895213"
 			tasks: [{
@@ -455,9 +410,7 @@
 			x: 2.5d
 			y: 0.0d
 			shape: "hexagon"
-			description: [
-				"{overview.cabricality.chapter_5.end.content}"
-			]
+			description: ["{overview.cabricality.chapter_5.end.content}"]
 			dependencies: [
 				"5E62059675895213"
 				"47965C310D9847DC"
@@ -483,4 +436,5 @@
 			]
 		}
 	]
+	quest_links: [ ]
 }
