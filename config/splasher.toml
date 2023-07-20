@@ -1,0 +1,27 @@
+enableSplashTexts = true
+enableFestivals = true
+followClientLanguage = true
+
+[debug]
+debugInfo = false
+# Show debug info
+
+[splash]
+colorful = true
+# Make splash texts a little colorful
+
+randomRate = 'Both'
+# Controls the splash text random rate
+
+# Never  - Never reload splash texts
+# Reload - Reload after reloading resources
+# Click  - Reload when clicking on the splash text
+# Both   - Reload both at reloading and clicking
+
+splashMode = 'Custom'
+# Controls the splash text contents
+
+# Disabled - Disable splash texts
+# Vanilla  - Show only vanilla splash texts
+# Custom   - Show only custom splash texts
+# Both     - Show both vanilla and custom splash texts
