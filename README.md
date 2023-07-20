@@ -1,3 +1,3 @@
-# Cabricality Server
+# <p align="center">Cabricality Server</p>
 
- Server side of [Cabricality](https://github.com/DM-Earth/Cabricality).
+ ### <p align="center">[Cabricality](https://github.com/DM-Earth/Cabricality) on Server Sides</p>
